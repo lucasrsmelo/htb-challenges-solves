@@ -17,12 +17,16 @@ try:
     resp = requests.get(url)
 
     html_content = resp.content
+    print(html_content)
 
     def html_cleaning(html):
         cleaning = re.compile('<.*?>')
-        return re.sub(cleaning, '', html)
+        return re.sub(cleaning, '', html_content)
 
-    print(html_cleaning(str(html_content)))
+    ### Split Random String
+    # out1 = html_cleaning(html)
+    # out2 = out1.split('string')[1]
+    # out3 = out2.rstrip()
 
 except IndexError:
 
