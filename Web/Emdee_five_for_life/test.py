@@ -27,7 +27,7 @@ try:
 except IndexError:
 
     print("Usage: test.py <target_url>")
-    print("Usage example: test.py https://www.pudim.com.br")
+    print("EXAMPLE: test.py https://www.pudim.com.br")
 
 except JSONDecodeError:
     print("ERROR: Decoding JSON has failed")
