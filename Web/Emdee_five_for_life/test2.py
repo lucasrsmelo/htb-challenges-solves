@@ -1,20 +1,19 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import requests
 import hashlib
-import re
+from bs4 import BeautifulSoup
 
 req = requests.session()
-url = "http://159.65.57.12:32656/"
+
+url = "http://46.101.74.114:31043"
 
 ### GET Request
-rget = req.get(url)
-html = rget.content
+get_req = req.get(url)
+html = get_req.content
 
-### Strip HTML
-def html_tags(html):
-    clean = re.compile('<.*?>')
-    return re.sub(clean, '', html)
+soup = BeautifulSoup(html, 'html.parser')
+hash_val = soup.h3.get_text().encode('utf-8')
 
-print(html_tags(html))
+print(hash_val)
 
