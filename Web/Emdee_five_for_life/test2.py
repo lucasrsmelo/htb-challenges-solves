@@ -6,7 +6,8 @@ from bs4 import BeautifulSoup
 
 req = requests.session()
 
-url = "http://46.101.74.114:31043"
+# PUT YOUR URL HERE
+url = ""
 
 ### GET Request
 get_req = req.get(url)
